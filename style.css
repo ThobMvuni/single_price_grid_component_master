@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css?family=Karla:400,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --light-cyan: hsl(179, 62%, 47%); /* slightly lighter for second column */
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    background-color: var(--light-gray);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: white;
+    border-radius: 0.625rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    line-height: 1.6;
+}
+
+li {
+    line-height: 1.6;
+}
+
+.btn {
+    background-color: var(--bright-yellow);
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.75rem;
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.container > article:first-child {
+    padding: 2rem;
+}
+
+.container > article:first-child h1 {
+    color: var(--cyan);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.container > article:first-child p:first-of-type {
+    color: var(--bright-yellow);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.container > article:first-child p:last-of-type {
+    color: var(--grayish-blue);
+}
+
+.container section {
+    display: flex;
+    flex-direction: column;
+}
+
+.container section article {
+    padding: 2rem;
+    color: white;
+}
+
+.container section article:first-child {
+    background-color: var(--cyan);
+}
+
+.container section article:first-child h2 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.container section article:first-child h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.container section article:first-child h3 span {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.container section article:first-child p {
+    font-size: 0.9rem;
+}
+
+.container section article:nth-child(2) {
+    background-color: var(--light-cyan);
+}
+
+.container section article:nth-child(2) h2 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.container section article:nth-child(2) ul li {
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .container > article:first-child {
+        grid-column: 1 / span 2;
+        text-align: left;
+    }
+
+    .container section {
+        flex-direction: row;
+        display: contents;
+    }
+
+    .container section article:first-child {
+        border-bottom-left-radius: 0.625rem;
+    }
+
+    .container section article:nth-child(2) {
+        border-bottom-right-radius: 0.625rem;
+    }
+}
